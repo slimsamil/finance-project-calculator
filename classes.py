@@ -30,8 +30,8 @@ def loan():
 
     rates = final_amount / years/12
    
-    print("\nComplete repayment is {} $".format(final_amount))
-    print("Monthly payment is {} $".format(rates))
+    print("\nComplete repayment is {}$".format(final_amount))
+    print("Monthly payment is {}$".format(rates))
 
 
 
