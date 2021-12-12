@@ -4,9 +4,9 @@ import math
 
 def loan():
     st.header("Loan Calculator")
-    years = st.text_input("Years", int())
-    amount = st.text_input("Amount of Loan", float())
-    interest= st.text_input("Interest as 0.0x", float())
+    years = st.text_input("Years")
+    amount = st.text_input("Amount of Loan")
+    interest= st.text_input("Interest as 0.0x")
     if st.button("Calculate Loan"):
         try:
             final_amount = float(0)
@@ -17,9 +17,9 @@ def loan():
 
                 final_amount = final_amount * (1+float(interest))
 
-            rates = final_amount / (float(years) / 12)
+            rates = float(final_amount / float(years)) / 12
 
-            st.text("\nComplete repayment is {}$".format(round(final_amount,2)))
+            st.text("Complete repayment is {}$".format(round(final_amount,2)))
             st.text("Monthly payment is {}$".format(round(rates,2)))
 
         except ValueError:
@@ -71,9 +71,9 @@ def roi():
                 break
     
         if(years == 0):
-            st.text("\nThe investment is not worth it")
+            st.text("The investment is not worth it")
         else:
-            st.text("\nThe investment is repaid after {} years".format(years))
+            st.text("The investment is repaid after {} years".format(years))
         
         st.stop()
 
