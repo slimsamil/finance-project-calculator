@@ -19,8 +19,11 @@ def loan():
 
             rates = final_amount / (float(years) / 12)
 
-            st.text("\nComplete repayment is {}$".format(round(final_amount,2)))
-            st.text("Monthly payment is {}$".format(round(rates,2)))
+            complete = round(final_amount,2)
+            monthly = round(rates,2)
+
+            st.text("\nComplete repayment is {complete}$")
+            st.text("Monthly payment is {rates}$")
 
         except ValueError:
             st.text("Your Input numbers are invalid")
@@ -45,7 +48,9 @@ def passbook():
                     final_amount = float(amount)
 
                 final_amount = (final_amount+float(monthly_invest))*(1+float(interest))
-            st.text("Final amount after {} years: ".format(years) + str(round(final_amount, 2)) + "$")
+
+            rounded = round(final_amount, 2)
+            st.text("Final amount after {years} years: {rounded}$")
         except ValueError: 
             st.text("Your Input numbers are invalid")
 
@@ -73,7 +78,7 @@ def roi():
         if(years == 0):
             st.text("\nThe investment is not worth it")
         else:
-            st.text("\nThe investment is repaid after {} years".format(years))
+            st.text("\nThe investment is repaid after {years} years")
         
         st.stop()
 
